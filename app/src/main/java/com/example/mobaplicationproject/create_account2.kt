@@ -8,27 +8,21 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
-
-
-
-
+class create_account2 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.sign_in_back)
+        setContentView(R.layout.activity_create_account2)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val Register = findViewById<View>(R.id.RegisterNow)
+        val Login = findViewById<View>(R.id.LogIn)
 
-        Register.setOnClickListener{
-            val intent = Intent(this@MainActivity, create_account2::class.java)
+        Login.setOnClickListener{
+            val intent = Intent(this@create_account2, MainActivity::class.java)
             startActivity(intent)
         }
-
     }
-
 }
