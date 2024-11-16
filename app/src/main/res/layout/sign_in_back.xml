@@ -12,10 +12,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout3"
+        style="@style/Input"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="325dp"
+        android:layout_marginEnd="30dp"
         android:maxHeight="50dp"
         android:minHeight="50dp"
         app:boxBackgroundColor="#E6E0E9"
@@ -25,6 +27,7 @@
         app:boxCornerRadiusTopStart="10dp"
         app:endIconDrawable="@drawable/mail"
         app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -38,10 +41,12 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textInputLayout"
+        style="@style/Input"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginTop="400dp"
+        android:layout_marginEnd="30dp"
         android:maxHeight="50dp"
         android:minHeight="50dp"
         app:boxBackgroundColor="#E6E0E9"
@@ -51,6 +56,7 @@
         app:boxCornerRadiusTopStart="10dp"
         app:endIconDrawable="@drawable/lock"
         app:endIconMode="custom"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -68,8 +74,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="180dp"
+        android:layout_marginEnd="98dp"
         android:text=" Welcome back"
         android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -77,10 +85,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="78dp"
-        android:layout_marginTop="213dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="75dp"
         android:text="sign in to access your account"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -88,6 +98,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginTop="42dp"
+        android:layout_marginEnd="-13dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.787"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/undraw_adventure_map_hnin_2" />
@@ -98,8 +111,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="31dp"
         android:layout_marginTop="466dp"
+        android:layout_marginEnd="252dp"
         android:text="Remember me"
         android:textSize="9sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -107,11 +122,13 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="252dp"
+        android:layout_marginStart="250dp"
         android:layout_marginTop="484dp"
+        android:layout_marginEnd="35dp"
         android:text="Forget password?"
         android:textColor="#6C63FF"
         android:textSize="9sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,11 +137,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="668dp"
+        android:layout_marginTop="653dp"
+        android:layout_marginEnd="30dp"
         android:width="300dp"
         android:height="50dp"
         android:text="Next"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -134,8 +153,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="73dp"
         android:layout_marginTop="726dp"
+        android:layout_marginEnd="189dp"
         android:text="New Member?"
         android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -143,11 +164,12 @@
         android:id="@+id/RegisterNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginTop="726dp"
+        android:layout_marginEnd="95dp"
         android:text="Register now"
         android:textColor="#6C63FF"
         android:textSize="13dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toTopOf="parent" />
 
