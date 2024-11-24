@@ -13,11 +13,14 @@
         android:theme="@style/Theme.MobAplicationProject"
         tools:targetApi="31">
         <activity
-            android:name=".create_account2"
-            android:exported="false"
-            android:launchMode="singleInstance"/>
+            android:name=".emptyActivity"
+            android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".registerActivity"
+            android:exported="false"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".loginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

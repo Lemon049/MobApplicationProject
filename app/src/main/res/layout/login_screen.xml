@@ -8,10 +8,10 @@
     android:visibility="visible"
     app:layout_constrainedWidth="true"
     app:layout_constraintWidth="wrap_content"
-    tools:context=".MainActivity">
+    tools:context=".loginActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout3"
+        android:id="@+id/textInputLayoutEmail"
         style="@style/Input"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -20,6 +20,7 @@
         android:layout_marginEnd="30dp"
         android:maxHeight="50dp"
         android:minHeight="50dp"
+
         app:boxBackgroundColor="#E6E0E9"
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusBottomStart="10dp"
@@ -40,7 +41,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textInputLayoutPassword"
         style="@style/Input"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
@@ -133,7 +134,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/loginNextBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
@@ -161,7 +162,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/RegisterNow"
+        android:id="@+id/RegisterNowTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="726dp"
