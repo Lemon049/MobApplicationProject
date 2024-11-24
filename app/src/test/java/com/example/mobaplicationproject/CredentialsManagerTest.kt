@@ -1,4 +1,3 @@
-// Put your package name here. Check your activity for reference.
 package com.example.xyz
 
 import org.junit.Test
@@ -6,56 +5,43 @@ import org.junit.jupiter.api.Assertions.*
 
 class CredentialsManagerTest {
 
-    // Test empty email
     @Test
-    fun givenEmptyEmail_thenReturnFalse() {
+    fun testEmptyEmail() {
         val credentialsManager = CredentialsManager()
-
         val isEmailValid = credentialsManager.isEmailValid("")
 
-        assertEquals(false, isEmailValid)
+        assert(isEmailValid)
     }
 
-    // Test wrong email format
     @Test
-    fun givenWrongEmailFormat_thenReturnFalse() {
+    fun testWrongEmail() {
         val credentialsManager = CredentialsManager()
-
         val isEmailValid = credentialsManager.isEmailValid("invalidEmail")
 
-        assertEquals(false, isEmailValid)
+        assert(isEmailValid)
     }
 
-    // Test proper email
     @Test
-    fun givenProperEmail_thenReturnTrue() {
-
+    fun testProperEmail() {
         val credentialsManager = CredentialsManager()
-
         val isEmailValid = credentialsManager.isEmailValid("example@mail.com")
 
-        assertEquals(true, isEmailValid)
+        assert(isEmailValid)
     }
 
-    // Test empty password
     @Test
-    fun givenEmptyPassword_thenReturnFalse() {
-
+    fun testEmptyPassword() {
         val credentialsManager = CredentialsManager()
-
         val isPasswordValid = credentialsManager.isPasswordValid("")
 
-        assertEquals(false, isPasswordValid)
+        assert(isPasswordValid)
     }
 
-    // Test filled password
     @Test
-    fun givenFilledPassword_thenReturnTrue() {
-
+    fun testProperPassword() {
         val credentialsManager = CredentialsManager()
-
         val isPasswordValid = credentialsManager.isPasswordValid("987654321")
 
-        assertEquals(true, isPasswordValid)
+        assert(isPasswordValid)
     }
 }
