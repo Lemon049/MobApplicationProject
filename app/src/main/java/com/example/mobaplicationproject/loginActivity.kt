@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.xyz.CredentialsManager
+import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 
 class loginActivity : AppCompatActivity() {
@@ -21,10 +23,13 @@ class loginActivity : AppCompatActivity() {
         val loginEmailInputLayout = findViewById<TextInputLayout>(R.id.textInputLayoutEmail)
         val loginPasswordInputLayout = findViewById<TextInputLayout>(R.id.textInputLayoutPassword)
         val registerText = findViewById<TextView>(R.id.RegisterNowTxt)
+        val loginTextField = findViewById<TextInputEditText>(R.id.loginEmailTextField)
+        val passwordTextField = findViewById<TextInputEditText>(R.id.loginPasswordTextField)
 
+        credentialsManager.userData["aboba@gmail.com"] = "neponimanie"
         loginNextBtn.setOnClickListener {
-            val email = loginEmailInputLayout.editText?.text.toString().trim()
-            val password = loginPasswordInputLayout.editText?.text.toString().trim()
+            val email = loginTextField.text.toString()
+            val password = passwordTextField.text.toString()
 
             var isValid = true
 
@@ -44,12 +49,14 @@ class loginActivity : AppCompatActivity() {
                 loginPasswordInputLayout.error = null
             }
 
-            //Check hardcoded stuff
-            if (isValid && credentialsManager.hardcoddedEmailPassword(email, password)) {
+            val success = credentialsManager.loginUser(email, password)
+
+            if (success && isValid || credentialsManager.hardcoddedEmailPassword(email, password)) {
+                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this, emptyActivity::class.java)
                 startActivity(intent)
             }
-            else if (isValid) {
+            else {
                 loginPasswordInputLayout.error = "Invalid email or password"
             }
         }
