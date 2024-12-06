@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MobAplicationProject"
         tools:targetApi="31">
         <activity
+            android:name=".activity_with_fragment"
+            android:exported="false" />
+        <activity
             android:name=".emptyActivity"
             android:exported="false" />
         <activity
