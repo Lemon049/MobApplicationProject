@@ -12,22 +12,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MobAplicationProject"
         tools:targetApi="31">
+
+        <activity
+            android:name=".SampleViewsActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".emptyActivity"
             android:exported="false" />
+
         <activity
             android:name=".registerActivity"
             android:exported="false"
             android:launchMode="singleInstance" />
+
         <activity
             android:name=".loginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>
