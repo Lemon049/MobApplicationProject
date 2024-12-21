@@ -8,15 +8,15 @@ import androidx.fragment.app.Fragment
 import com.example.xyz.CredentialsManager
 import com.google.android.material.textfield.TextInputLayout
 
-class FragmentB : Fragment(R.layout.login_screen) {
+class LoginFragment : Fragment(R.layout.login_screen) {
     private val credentialsManager = CredentialsManager()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         val registerNow = view.findViewById<TextView>(R.id.RegisterNowTxt)
-        val loginEmail = view.findViewById<TextInputLayout>(R.id.loginEmailTextField)
-        val loginPassword = view.findViewById<TextInputLayout>(R.id.loginPasswordTextField)
+        val loginEmail = view.findViewById<TextInputLayout>(R.id.textInputLayoutEmail)
+        val loginPassword = view.findViewById<TextInputLayout>(R.id.textInputLayoutPassword)
         val loginNextButton = view.findViewById<Button>(R.id.loginNextBtn)
 
         loginNextButton.setOnClickListener {

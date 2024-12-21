@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.example.xyz.CredentialsManager
 import com.google.android.material.textfield.TextInputLayout
 
-class FragmentA : Fragment(R.layout.register_screen) {
+class RegisterFragment : Fragment(R.layout.register_screen) {
     private val credentialsManager = CredentialsManager()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
