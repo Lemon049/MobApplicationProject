@@ -43,9 +43,8 @@ class LoginFragment : Fragment(R.layout.login_screen) {
                     credentialsManager.loginUser(emailText, passwordText)
 
             if (loginSuccessful) {
-                // Navigate to ListRecycleActivity
-                val intent = Intent(requireContext(), ListRecycleActivity::class.java)
-                startActivity(intent)
+                val goToMain = Intent(requireActivity(), ListRecycleActivity::class.java)
+                startActivity(goToMain)
             } else {
                 loginEmail.error = "Incorrect email or password"
                 loginPassword.error = "Incorrect email or password"

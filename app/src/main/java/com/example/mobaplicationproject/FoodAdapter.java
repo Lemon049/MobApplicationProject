@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-// Adapter for RecyclerView
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder> {
 
     private final List<FoodItem> foodList;
@@ -23,6 +22,13 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
     public FoodAdapter(List<FoodItem> foodList, Context context) {
         this.foodList = foodList;
         this.context = context;
+    }
+
+    @NonNull
+    @Override
+    public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_recycle, parent, false);
+        return new FoodViewHolder(view);
     }
 
     // ViewHolder class to manage individual item views
@@ -43,13 +49,6 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         }
     }
 
-    @NonNull
-    @Override
-    public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_recycle, parent, false);
-        return new FoodViewHolder(view);
-    }
-
     @Override
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
         FoodItem foodItem = foodList.get(position);
@@ -57,6 +56,10 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.FoodViewHolder
         holder.foodImage.setImageResource(foodItem.getImageResId());
         holder.foodTitle.setText(foodItem.getTitle());
         holder.foodDescription.setText(foodItem.getDescription());
+
+        holder.itemView.setOnClickListener(v -> {
+            Toast.makeText(context, "You clicked on: " + foodItem.getTitle(), Toast.LENGTH_SHORT).show();
+        });
 
         // Set click listener for food image
         holder.foodImage.setOnClickListener(v ->
