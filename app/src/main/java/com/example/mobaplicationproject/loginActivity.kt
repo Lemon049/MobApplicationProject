@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.xyz.CredentialsManager
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import android.view.View
+
 
 class loginActivity : AppCompatActivity() {
 
@@ -51,14 +53,7 @@ class loginActivity : AppCompatActivity() {
 
             val success = credentialsManager.loginUser(email, password)
 
-            if (success && isValid || credentialsManager.hardcoddedEmailPassword(email, password)) {
-                Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this, emptyActivity::class.java)
-                startActivity(intent)
-            }
-            else {
-                loginPasswordInputLayout.error = "Invalid email or password"
-            }
+
         }
 
         registerText.setOnClickListener {

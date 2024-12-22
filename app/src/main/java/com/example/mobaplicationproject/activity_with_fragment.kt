@@ -1,11 +1,12 @@
 package com.example.mobaplicationproject
 
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.fragment.app.commit
+import androidx.fragment.app.replace
 
 class activity_with_fragment : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -17,37 +18,24 @@ class activity_with_fragment : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val fragmentA = FragmentA()
-        val fragmentB = FragmentB()
-        val buttonFragment = findViewById<Button>(R.id.btnFragment)
-        var isActive : Boolean = false
 
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.flFragment, fragmentA)
-            commit()
-            isActive = true
+        // Set the initial fragment
+        supportFragmentManager.commit {
+            replace<LoginFragment>(R.id.sampleActivity)
         }
+    }
 
-        buttonFragment.setOnClickListener{
-            if (isActive == true)
-            {
-                supportFragmentManager.beginTransaction().apply {
-                    replace(R.id.flFragment, fragmentB)
-                    commit()
-                    isActive = false
-                }
-            }
-            else
-            {
-                supportFragmentManager.beginTransaction().apply {
-                    replace(R.id.flFragment, fragmentA)
-                    commit()
-                    isActive = true
-                }
-            }
-
-
+    fun switchToRegisterFragment() {
+        supportFragmentManager.commit {
+            replace<RegisterFragment>(R.id.sampleActivity)
+            addToBackStack(null) // Enable back navigation
         }
+    }
 
+    fun switchToLoginFragment() {
+        supportFragmentManager.commit {
+            replace<LoginFragment>(R.id.sampleActivity)
+            addToBackStack(null) // Enable back navigation
+        }
     }
 }
