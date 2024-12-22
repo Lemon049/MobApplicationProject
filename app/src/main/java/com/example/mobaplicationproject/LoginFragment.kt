@@ -1,6 +1,7 @@
 package com.example.mobaplicationproject
 
 import android.os.Bundle
+import android.content.Intent
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
@@ -42,7 +43,9 @@ class LoginFragment : Fragment(R.layout.login_screen) {
                     credentialsManager.loginUser(emailText, passwordText)
 
             if (loginSuccessful) {
-                // You can define any post-login action here if required
+                // Navigate to ListRecycleActivity
+                val intent = Intent(requireContext(), ListRecycleActivity::class.java)
+                startActivity(intent)
             } else {
                 loginEmail.error = "Incorrect email or password"
                 loginPassword.error = "Incorrect email or password"
