@@ -3,6 +3,7 @@ package com.example.mobaplicationproject
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,7 @@ class ListRecycleActivity : AppCompatActivity() {
 
         val logoutButton: Button = findViewById(R.id.logoutButton)
         val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        val progressBar: ProgressBar = findViewById(R.id.progressCircle)
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         adapter = FoodAdapter(emptyList(), this)
